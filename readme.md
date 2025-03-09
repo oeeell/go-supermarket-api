@@ -103,7 +103,7 @@ supermarket-api/
    ```
 
 ## 📜 Documentation
-API documentation is available in **Postman Collection**. Import the collection to test endpoints.
+API documentation is available in **Postman Collection**. [Download the Postman Collection](docs/supermarket-api.postman_collection.json) and import the collection to test endpoints.
 
 ## 📌 Deployment
 ### Run with Docker
