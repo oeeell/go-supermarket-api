@@ -1,0 +1,130 @@
+{
+  "info": {
+      "_postman_id": "abcd1234-5678-90ef-ghij-klmnopqrstuv",
+      "name": "Supermarket API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+      {
+          "name": "Products",
+          "item": [
+              {
+                  "name": "Get All Products",
+                  "request": {
+                      "method": "GET",
+                      "header": [],
+                      "url": {
+                          "raw": "{{base_url}}/api/products",
+                          "host": ["{{base_url}}"],
+                          "path": ["api", "products"]
+                      }
+                  },
+                  "response": []
+              },
+              {
+                  "name": "Create Product",
+                  "request": {
+                      "method": "POST",
+                      "header": [
+                          { "key": "Content-Type", "value": "application/json" }
+                      ],
+                      "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"Apple\",\n  \"price\": 1.5,\n  \"stock\": 100\n}"
+                      },
+                      "url": {
+                          "raw": "{{base_url}}/api/products",
+                          "host": ["{{base_url}}"],
+                          "path": ["api", "products"]
+                      }
+                  },
+                  "response": [
+                      {
+                          "name": "Success Response",
+                          "originalRequest": {
+                              "method": "POST",
+                              "header": [
+                                  { "key": "Content-Type", "value": "application/json" }
+                              ],
+                              "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"Apple\",\n  \"price\": 1.5,\n  \"stock\": 100\n}"
+                              }
+                          },
+                          "status": "201 Created",
+                          "code": 201,
+                          "body": "{\n  \"id\": 1,\n  \"name\": \"Apple\",\n  \"price\": 1.5,\n  \"stock\": 100\n}",
+                          "header": [
+                              { "key": "Content-Type", "value": "application/json" }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "Transactions",
+          "item": [
+              {
+                  "name": "Get All Transactions",
+                  "request": {
+                      "method": "GET",
+                      "header": [],
+                      "url": {
+                          "raw": "{{base_url}}/api/transactions",
+                          "host": ["{{base_url}}"],
+                          "path": ["api", "transactions"]
+                      }
+                  },
+                  "response": []
+              },
+              {
+                  "name": "Create Transaction",
+                  "request": {
+                      "method": "POST",
+                      "header": [
+                          { "key": "Content-Type", "value": "application/json" }
+                      ],
+                      "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"product_id\": 1,\n  \"quantity\": 2\n}"
+                      },
+                      "url": {
+                          "raw": "{{base_url}}/api/transactions",
+                          "host": ["{{base_url}}"],
+                          "path": ["api", "transactions"]
+                      }
+                  },
+                  "response": [
+                      {
+                          "name": "Success Response",
+                          "originalRequest": {
+                              "method": "POST",
+                              "header": [
+                                  { "key": "Content-Type", "value": "application/json" }
+                              ],
+                              "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"product_id\": 1,\n  \"quantity\": 2\n}"
+                              }
+                          },
+                          "status": "201 Created",
+                          "code": 201,
+                          "body": "{\n  \"transaction_id\": 1,\n  \"product_id\": 1,\n  \"quantity\": 2,\n  \"total_price\": 3.0\n}",
+                          "header": [
+                              { "key": "Content-Type", "value": "application/json" }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
+  ],
+  "variable": [
+      {
+          "key": "base_url",
+          "value": "http://localhost:8080",
+          "type": "string"
+      }
+  ]
+}
